@@ -1,44 +1,43 @@
 ---
-
 ---
 
 <header>
-    <nav>
-        <a href="/" title="Homepage">D<span></span></a>
-    </nav>
+  <nav>
+    <a href="/" title="Homepage">D<span></span></a>
+  </nav>
 </header>
 
 <style>
+  header {
+    margin: 0 auto;
+    max-width: 720px;
+    padding: 20px 20px;
+  }
+
+  nav a {
+    font-size: 2rem;
+    text-decoration: none;
+  }
+
+  nav a {
+    opacity: 0.3;
+  }
+
+  nav span {
+    height: 8px;
+    width: 8px;
+    background-color: #3c0d99;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  nav a:hover {
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 667px) {
     header {
-        margin: 0 auto;
-        max-width: 960px;
-        padding: 0 20px;
+      padding: 60px 20px;
     }
-
-    nav a {
-        font-size: 2rem;
-        text-decoration: none;
-    }
-
-    nav a {
-        opacity: 0.3;
-    }
-
-    nav span {
-        height: 8px;
-        width: 8px;
-        background-color: #3c0d99;
-        border-radius: 50%;
-        display: inline-block;
-    }
-
-    nav a:hover {
-        opacity: 1;
-    }
-
-    @media screen and (min-width: 667px) {
-        header {
-            padding: 60px 20px;
-        }
-    }
+  }
 </style>

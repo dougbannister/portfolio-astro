@@ -1,7 +1,37 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from "../components/Card.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title='Portfolio' description='New description'>
-  <h1>Homepage</h1>
+<BaseLayout title="Portfolio" description="New description">
+  <h1>I design and optimise digital experiences.</h1>
+  <section>
+    <h2>Case studies</h2>
+    <div class="cards">
+      <Card
+        title="Search system optimisation"
+        href="/articles/search-case-study"
+      />
+      <Card
+        title="E-commerce site rebuild"
+        href="/articles/e-commerce-case-study"
+      />
+      <Card
+        title="Holiday booking management and user account"
+        href="/articles/booking-management-case-study"
+      />
+      <Card
+        title="Increasing brochure sign-ups with AB testing"
+        href="/articles/brochure-case-study"
+      />
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+</style>

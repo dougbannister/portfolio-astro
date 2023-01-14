@@ -1,36 +1,32 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 export interface Props {
-	content: {
-		title: string;
-		description: string;
-		pubDate?: string;
-		updatedDate?: string;
-		heroImage?: string;
-	};
+  content: {
+    title: string;
+    description: string;
+    pubDate?: string;
+    updatedDate?: string;
+  };
 }
 
 const {
-	content: { title, description, pubDate, updatedDate, heroImage },
+  content: { title, description, pubDate, updatedDate },
 } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
-    <main>
-        <article>
-            {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-            <h1 class="title">{title}</h1>
-            {pubDate && <time>{pubDate}</time>}
-            {
-                updatedDate && (
-                    <div>
-                        Last updated on <time>{updatedDate}</time>
-                    </div>
-                )
-            }
-            <hr />
-            <slot />
-        </article>
-    </main>
+    <article>
+      
+      {pubDate && <time>{pubDate}</time>}
+      {
+        updatedDate && (
+          <div>
+            Last updated on <time>{updatedDate}</time>
+          </div>
+        )
+      }
+      <h1 class="title">{title}</h1>
+      <slot />
+    </article>
 </BaseLayout>
