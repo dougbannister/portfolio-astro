@@ -2,18 +2,17 @@
 export interface Props {
   title: string;
   href: string;
+  img: string;
 }
 
-const { href, title } = Astro.props;
+const { href, title, img } = Astro.props;
 ---
 
 <div class="card shadow">
-  <div class="card-img" style="background-image: url(img/placeholder-social.jpg)">
-  </div>
+  <img class="card-img" src={img} alt={title}>
   <div class="card-text">
     <h3>
       {title}
-      <span>&rarr;</span>
     </h3>
   </div>
   <a href={href} title={title}><span></span></a>
@@ -22,7 +21,7 @@ const { href, title } = Astro.props;
   .card {
     border-radius: 15px;
     flex: 0 1 100%;
-    margin: 0 0 3rem 0;
+    margin: 0 0 2rem 0;
     position: relative;
   }
 
@@ -32,11 +31,7 @@ const { href, title } = Astro.props;
 
   .card-img {
     width: 100%;
-    height: 300px;
     border-radius: 15px 15px 0 0;
-    background-position: center;
-    background-size: cover;
-    background-color: #aaaaaa;
   }
 
   .card a span {
