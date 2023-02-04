@@ -16,17 +16,25 @@ const {
 ---
 
 <BaseLayout title={title} description={description}>
-    <article>
-      
-      {pubDate && <time>{pubDate}</time>}
-      {
-        updatedDate && (
-          <div>
-            Last updated on <time>{updatedDate}</time>
-          </div>
-        )
-      }
-      <h1 class="title">{title}</h1>
-      <slot />
-    </article>
+  <section>
+    <h1 class="title">{title}</h1>
+
+    {pubDate && <time>{pubDate}</time>}
+    {
+      updatedDate && (
+        <div>
+          Last updated on <time>{updatedDate}</time>
+        </div>
+      )
+    }
+
+    <slot />
+  </section>
 </BaseLayout>
+
+<style>
+  time {
+    margin: 2rem 0;
+    font-size: 0.8rem; 
+  }
+</style>

@@ -7,36 +7,42 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <h1>I design and optimise digital experiences.</h1>
   <section>
     <h2>Selected articles</h2>
-    <div class="cards">
+    <ul role="list" class="cards">
       <Card
         title="Search system optimisation"
         href="/articles/search-case-study"
         img="img/search-header.png"
+        intro="Test"
       />
       <Card
         title="E-commerce site rebuild"
         href="/articles/e-commerce-case-study"
-        img="img/ht-1.png"
+        img="img/HT-1.png"
+        intro="Test"
       />
       <Card
         title="Holiday booking and account management"
         href="/articles/booking-management-case-study"
         img="img/mytitan-header.png"
+        intro="Test"
       />
       <Card
-        title="Increasing brochure sign-ups with AB testing"
+        title="Uplift in sign-ups with AB testing"
         href="/articles/brochure-case-study"
-        img="img/brochure-header.png"
+        img="img/Brochure-header.png"
+        intro="Test"
       />
-    </div>
-    <a href="/articles">View all articles</a>
+    </ul>
+    
   </section>
+  <a href="/articles">View all articles</a>
 </BaseLayout>
 
 <style>
   .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+		gap: 1rem;
+		padding: 0;
   }
 </style>
