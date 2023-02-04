@@ -11,7 +11,7 @@ const { href, title, intro, img } = Astro.props;
 
 <li class="card">
   <a href={href}>
-    <img class="card-img shadow" src={img} alt={title} />
+    <img class="shadow" src={img} alt={title} />
       <h3>
         {title}
       </h3>
@@ -32,33 +32,7 @@ const { href, title, intro, img } = Astro.props;
 		line-height: 1.4;
   }
 
-  .card-img {
-    width: 100%;
-    height: auto;
-    border-radius: 1rem;
-    object-fit: cover;
-  }
-
   .shadow {
-    -webkit-box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
-    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
-    -webkit-transition-property: -webkit-box-shadow, -webkit-transform;
-    transition-property: box-shadow, transform;
-    -webkit-transition-duration: 0.15s;
-    transition-duration: 0.15s;
-  }
-
-  .shadow:hover,
-  .shadow:active {
-    -webkit-box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-      0 18px 36px -18px rgba(0, 0, 0, 0.3),
-      0 -12px 36px -8px rgba(0, 0, 0, 0.025);
-    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-      0 18px 36px -18px rgba(0, 0, 0, 0.3),
-      0 -12px 36px -8px rgba(0, 0, 0, 0.025);
-    -webkit-transform: translateY(-2px);
-    transform: rotate(-0.5deg) translateY(-8px);
+    box-shadow: 0 16px 24px 2px rgb(29 17 51 / 4%), 0 6px 32px 4px rgb(9 32 77 / 12%), 0 8px 12px -5px rgb(29 17 51 / 12%);
   }
 </style>

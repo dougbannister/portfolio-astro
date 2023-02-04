@@ -4,45 +4,45 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Portfolio" description="New description">
-  <h1>I design and optimise digital experiences.</h1>
-  <section>
+    <section>
+    <h1>I design and optimise digital experiences.</h1>
     <h2>Selected articles</h2>
     <ul role="list" class="cards">
       <Card
         title="Search system optimisation"
         href="/articles/search-case-study"
         img="img/search-header.png"
-        intro="Test"
+        intro="Optimising a search system: the human-centered design approach to improving user experience on a group touring website"
       />
       <Card
         title="E-commerce site rebuild"
         href="/articles/e-commerce-case-study"
         img="img/HT-1.png"
-        intro="Test"
+        intro="Rebuilding an e-commerce site to simplify the checkout process and improve sign-up conversion rates"
       />
       <Card
         title="Holiday booking and account management"
         href="/articles/booking-management-case-study"
         img="img/mytitan-header.png"
-        intro="Test"
+        intro="Holiday management system overhauled for enhanced customer experience, paperless solution, self-serve functionality, and reduced service issues"
       />
       <Card
-        title="Uplift in sign-ups with AB testing"
+        title="Uplift in sign-ups with A/B testing"
         href="/articles/brochure-case-study"
         img="img/Brochure-header.png"
-        intro="Test"
+        intro="Increased brochure sign-ups by 25% through split testing and user-centered design updates on a brochure request web page"
       />
     </ul>
-    
+    <a href="/articles">View all articles</a>
   </section>
-  <a href="/articles">View all articles</a>
+
 </BaseLayout>
 
 <style>
   .cards {
     display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-		gap: 1rem;
+		gap: 1.2rem;
 		padding: 0;
   }
 </style>
