@@ -1,5 +1,5 @@
 # portfolio-astro
-My portfolio, created using the Astro framework.
+My portfolio, created using the Astro framework:
 
 | Command                | Action                                           |
 | :--------------------- | :----------------------------------------------- |
