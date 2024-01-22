@@ -7,17 +7,30 @@ export interface Props {
     description: string;
     pubDate?: string;
     updatedDate?: string;
+    heroImage?: string;
   };
 }
 
 const {
-  content: { title, description, pubDate, updatedDate },
+  content: { title, description, pubDate, updatedDate, heroImage },
 } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
   <section>
+
+    {/* Hero Image */}
+    {
+      heroImage && (
+        <div class="hero">
+          <img src={heroImage} alt={title} />
+        </div>
+      )
+    }
+    
     <h1 class="title">{title}</h1>
+
+
 
     {pubDate && <time>{pubDate}</time>}
     {
@@ -31,3 +44,14 @@ const {
     <slot />
   </section>
 </BaseLayout>
+
+<style>
+  .hero {
+    margin-top: 20px;
+  }
+
+  .hero img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>

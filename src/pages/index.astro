@@ -1,48 +1,56 @@
 ---
 import Card from "../components/Card.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Fetch all articles and sort them by pubDate
+const allArticles = (await Astro.glob("./articles/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
+);
+
+// Separate featured and regular articles
+const featuredArticle = allArticles.find(article => article.frontmatter.featured);
+const regularArticles = allArticles.filter(article => !article.frontmatter.featured).slice(0, 4);
 ---
 
 <BaseLayout title="Portfolio" description="New description">
-    <section>
+  <section>
     <h1>I design and optimise digital experiences.</h1>
+
+    <h2>Featured article</h2>
+    {featuredArticle && (
+      <Card
+        title={featuredArticle.frontmatter.title}
+        href={featuredArticle.url}
+        img={featuredArticle.frontmatter.heroImage}
+        intro={featuredArticle.frontmatter.description}
+      />
+    )}
+
     <h2>Recent articles</h2>
+    {/* Loop through regular articles and generate cards */}
     <ul role="list" class="cards">
-      <Card
-        title="Search system optimisation"
-        href="/articles/search-case-study"
-        img="img/search-header.png"
-        intro="Optimising a search system: the human-centered design approach to improving user experience on a group touring website"
-      />
-      <Card
-        title="E-commerce site rebuild"
-        href="/articles/e-commerce-case-study"
-        img="img/HT-1.png"
-        intro="Rebuilding an e-commerce site to simplify the checkout process and improve sign-up conversion rates"
-      />
-      <Card
-        title="Holiday booking and management"
-        href="/articles/booking-management-case-study"
-        img="img/mytitan-header.png"
-        intro="Holiday management system overhauled for enhanced experience, paperless solution, self-serve functionality, and reduced service issues"
-      />
-      <Card
-        title="Uplift in sign-ups with A/B testing"
-        href="/articles/brochure-case-study"
-        img="img/Brochure-header.png"
-        intro="Increased brochure sign-ups by 25% through split testing and user-centered design updates on a brochure request web page"
-      />
+      {
+        regularArticles.map((article) => (
+          <Card
+            title={article.frontmatter.title}
+            href={article.url}
+            img={article.frontmatter.heroImage}
+            intro={article.frontmatter.description}
+          />
+        ))
+      }
     </ul>
     <a href="/articles">View all articles</a>
   </section>
-
 </BaseLayout>
 
 <style>
   .cards {
     display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		gap: 1.2rem;
-		padding: 0;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.2rem;
+    padding: 0;
   }
 </style>

@@ -1,54 +1,52 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
 
-const posts = (await Astro.glob("./articles/*.{md,mdx}")).sort(
+// Fetch all articles and sort them by pubDate
+const allArticles = (await Astro.glob("./articles/*.{md,mdx}")).sort(
   (a, b) =>
     new Date(b.frontmatter.pubDate).valueOf() -
     new Date(a.frontmatter.pubDate).valueOf()
 );
+
+// Paginate the articles, displaying 8 articles per page
+const pageSize = 8;
+const totalPages = Math.ceil(allArticles.length / pageSize);
+
+const getPageArticles = (page) => {
+  const startIndex = (page - 1) * pageSize;
+  return allArticles.slice(startIndex, startIndex + pageSize);
+};
 ---
 
 <BaseLayout title="Articles" description="New description">
   <h1>Articles</h1>
+  <!-- Loop through paginated articles and generate cards -->
   <section>
-    <style>
-      ul {
-        list-style-type: none;
-        padding: unset;
-      }
-
-      ul li {
-        display: flex;
-      }
-
-      ul li time {
-        flex: 0 0 130px;
-        font-style: italic;
-        color: #595959;
-      }
-    </style>
-    <ul>
-      {
-        posts.map((post) => (
-          <li>
-            <time datetime={post.frontmatter.pubDate}>
-              {new Date(post.frontmatter.pubDate).toLocaleDateString("en-us", {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-              })}
-            </time>
-            <a href={post.url}>{post.frontmatter.title}</a>
-          </li>
-        ))
-      }
-    </ul>
+    {
+      Array.from({ length: totalPages }).map((_, pageIndex) => (
+      <ul role="list" class="cards">
+          {
+            getPageArticles(pageIndex + 1).map((article) => (
+              <Card
+                title={article.frontmatter.title}
+                href={article.url}
+                img={article.frontmatter.heroImage}
+                intro={article.frontmatter.description}
+              />
+            ))
+          }
+        </ul>
+      ))
+    }
   </section>
 </BaseLayout>
+
 <style>
   .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.2rem;
+    padding: 0;
   }
 </style>

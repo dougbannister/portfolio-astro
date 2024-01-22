@@ -3,36 +3,33 @@ export interface Props {
   title: string;
   href: string;
   img: string;
-  intro: string
+  intro: string;
 }
 
-const { href, title, intro, img } = Astro.props;
+const { title, href, img, intro } = Astro.props;
 ---
 
 <li class="card">
   <a href={href}>
     <img class="shadow" src={img} alt={title} />
-      <h3>
-        {title}
-      </h3>
-      <p>
-        {intro}
-      </p>
+    <h3>{title}</h3>
+    <p>{intro}</p>
   </a>
 </li>
+
 <style>
   .card {
     list-style: none;
-		display: flex;
+    display: flex;
+    width: 100%;
   }
 
   .card > a {
-    width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
+    text-decoration: none;
+    line-height: 1.4;
   }
 
-  .card:hover h3{
+  .card:hover h3 {
     color: #e97cff;
   }
 
