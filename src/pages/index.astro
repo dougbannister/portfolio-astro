@@ -14,7 +14,7 @@ const featuredArticle = allArticles.find(article => article.frontmatter.featured
 const regularArticles = allArticles.filter(article => !article.frontmatter.featured).slice(0, 4)
 ---
 
-<BaseLayout title="Portfolio" description="New description">
+<BaseLayout title="Portfolio" description="Doug Bannister's articles, case studies and other information">
   <section>
     <h1>I design and optimise digital experiences.</h1>
 
@@ -29,7 +29,6 @@ const regularArticles = allArticles.filter(article => !article.frontmatter.featu
     )}
 
     <h2>Recent articles</h2>
-    {/* Loop through regular articles and generate cards */}
     <div class="cards">
       {
         regularArticles.map((article) => (
