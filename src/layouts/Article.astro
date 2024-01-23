@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro"
 
 export interface Props {
   content: {
@@ -13,7 +13,7 @@ export interface Props {
 
 const {
   content: { title, description, pubDate, updatedDate, heroImage },
-} = Astro.props;
+} = Astro.props
 ---
 
 <BaseLayout title={title} description={description}>

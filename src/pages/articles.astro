@@ -1,22 +1,22 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Card from "../components/Card.astro";
+import BaseLayout from "../layouts/BaseLayout.astro"
+import Card from "../components/Card.astro"
 
 // Fetch all articles and sort them by pubDate
 const allArticles = (await Astro.glob("./articles/*.{md,mdx}")).sort(
   (a, b) =>
     new Date(b.frontmatter.pubDate).valueOf() -
     new Date(a.frontmatter.pubDate).valueOf()
-);
+)
 
 // Paginate the articles, displaying 8 articles per page
-const pageSize = 8;
-const totalPages = Math.ceil(allArticles.length / pageSize);
+const pageSize = 8
+const totalPages = Math.ceil(allArticles.length / pageSize)
 
 const getPageArticles = (page) => {
   const startIndex = (page - 1) * pageSize;
   return allArticles.slice(startIndex, startIndex + pageSize);
-};
+}
 ---
 
 <BaseLayout title="Articles" description="New description">

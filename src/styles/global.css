@@ -9,7 +9,6 @@
   font-feature-settings: normal;
   font-size: 18px;
   line-height: 1.6;
-  /* font-weight: 400; */
   color: #fbfbfe;
 }
 
@@ -37,10 +36,9 @@ section {
 }
 
 img {
+  border-radius: 1rem;
   max-width: 100%;
   height: auto;
-  border-radius: 1rem;
-  object-fit: cover;
 }
 
 nav a {

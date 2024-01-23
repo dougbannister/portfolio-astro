@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 export interface Props {
   title: string;
   href: string;
@@ -9,17 +11,16 @@ export interface Props {
 const { title, href, img, intro } = Astro.props;
 ---
 
-<li class="card">
+<div class="card">
   <a href={href}>
-    <img class="shadow" src={img} alt={title} />
+    <Image src={img} alt={title} width={920} height={350}  />
     <h3>{title}</h3>
     <p>{intro}</p>
   </a>
-</li>
+</div>
 
 <style>
   .card {
-    list-style: none;
     display: flex;
     width: 100%;
   }
@@ -33,7 +34,8 @@ const { title, href, img, intro } = Astro.props;
     color: #e97cff;
   }
 
-  .shadow {
-    box-shadow: 0 16px 24px 2px rgb(29 17 51 / 4%), 0 6px 32px 4px rgb(9 32 77 / 12%), 0 8px 12px -5px rgb(29 17 51 / 12%);
+  .image {
+    border-radius: 1rem;
+    /* You can adjust other styles here if needed */
   }
 </style>
