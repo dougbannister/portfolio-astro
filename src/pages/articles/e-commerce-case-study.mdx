@@ -6,6 +6,8 @@ pubDate: 'Jun 14 2022'
 heroImage: '/img/HT-1.png'
 ---
 
+import { Image } from 'astro:assets';
+
 Visitors are able to select broadband package deals online as they continue through the checkout process.
 
 ## Challenge
@@ -28,13 +30,13 @@ __Systems used__: Google Analytics, Data analysis, Crazyegg, Hotjar, Photoshop
 ## Visitor overview
 Visitors to the checkout come from an email which is sent from their estate agent. The email informs them about the products and they link to the checkout which tends to be co-branded with the estate agent. Alternatively, the visitors arrive directly or organically to the website.
 
-![demographic data for ](/img/HT-2.png)
+<Image src="/img/HT-2.png" alt="typical demographic data for telecoms customers" width={920} height={350} />
 
 An export of our current database showed that the typical user will live in and around London and is less likely to have English as a first language. It was essential to use clear copy on the page and to carefully consider mobile responsiveness.
 
 Data from Google Analytics over the last three months showed that the first interaction with the sign-up flow is using a mobile device. Analytics revealed that 98% of visitors don’t make it to the 'Summary page'.
 
-![graph of visitor drop off for each step in order flow](/img/HT-graph.png)
+<Image src="/img/HT-graph.png" alt="graph of visitor drop off for each step in order flow" width={920} height={350} />
 
 The three highest areas where drop off occur are the 'Welcome', 'Line rental' and 'Contract' pages.
 
@@ -46,7 +48,7 @@ A mix of confusion together with the rather long process up until now has left a
 
 With the highest drop off here being 48%, it suggests that visitors are simply impacted by the costs on the 'Contract' page and as there is not much information to motivate them, more visitors will drop from the flow at this stage.
 
-![click heatmapping examples from Crazyegg](/img/HT-Results.png)
+<Image src="/img/HT-Results.png" alt="click heatmapping examples from Crazyegg" width={920} height={350} />
 
 There appeared to be a lot of general confusion.
 
@@ -61,11 +63,11 @@ The website is not fully responsive – content misalinement and excess overspil
 ## Going forward
 A rebuild of the system allowed for a much cleaner, simpler approach to the layout. A greater reduction in the steps required by the user and more clarifaction in the content can reduce confusion, stress and cognative load.
 
-![example of the redesigned order flow](/img/HT-Results-2.png)
+<Image src="/img/HT-Results-2.png" alt="example of the redesigned order flow" width={920} height={350} />
 
 When changes went live, user behaviour continued to be assessed in session recordings from Hotjar. Ideally, a more iterative approach to changes should have continued.
 
-![a view of the progress path design](/img/HT-Results-3.png)
+<Image src="/img/HT-Results-3.png" alt="a view of the progress path design" width={920} height={350} />
 
 The checkout might be enhanced further with the branding of the estate agents by incorporating their colour scheme into components, for example.
 

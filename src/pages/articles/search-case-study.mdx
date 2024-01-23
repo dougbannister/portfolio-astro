@@ -6,6 +6,8 @@ pubDate: 'Jul 02 2022'
 heroImage: '/img/search-header.png'
 ---
 
+import { Image } from 'astro:assets';
+
 The search system allows visitors to use keywords, filter and sort to provide results for a perfect trip.
 
 ## Challenge
@@ -28,6 +30,7 @@ Users struggled with the search bar. They found the search bar's behaviour confu
 One highlight, User #3 was impressed that our wish list feature worked. She found it useful to store tours and access them “to show friends”. These persist on personal computers but if she were to use her friend’s computer – it would not show. She was excited at the idea of having an account login in order to store these wish lists. In order for these wish lists to persist across devices, they would need to be stored in an account. Having a site-wide account would allow for this.
 
 ## Competitor analysis
+
 **Search bar**
 
 As expected, common search bar options included Region, Holiday Type and Product Search. Many sites used the date picker and date range functionality but the difference was that not all sites enforced it. Auto-suggest was fairly common and I expected that some sites would make use of 'product cards' but surprisingly this as well as 'recent searches' and 'review score' were not used at all. This could mean that there is an opportunity to test the effectiveness of these.
@@ -40,9 +43,9 @@ Top 5 competitors in escorted touring:
 4. Newmarketholidays.co.uk - 80% affinity
 5. Leger.co.uk – 79% affinity
 
-Visitors build up familiarity with these systems over time (Jakob's Law) and may expect similar solutions / models and behaviour elsewhere. Therefore, it made sense for me to check leading websites like Google Flights, Airbnb and Skyscanner. It also gives a picture of emerging trends and tech being used.
+Visitors build up familiarity with systems over time (Jakob's Law) and may expect similar solutions / models and behaviour elsewhere. Therefore, it made sense for me to check leading websites like Google Flights, Airbnb and Skyscanner. It also gives a picture of emerging trends and tech being used.
 
-![spreadsheet showing a comparison of search bar features](/img/search-bar-grid.png)
+<Image src="/img/search-bar-grid.png" alt="spreadsheet showing a comparison of search bar features" width={920} height={350} />
 
 Our customer's personas decribe their other interests - such as Waitrose, Marks and Spencer and the Daily Mail. These brand's websites were also audited.
 
@@ -56,11 +59,11 @@ Cottages.com had a ‘view on map’ option with manageable clustered properties
 
 The search results page is obviously closely tied to the search bar. Competitors have shown various result card layouts and the use of different filters and sorting.
 
-![spreadsheet of search results features](/img/search-results-grid.png)
+<Image src="/img/search-results-grid.png" alt="spreadsheet of search results features" width={920} height={350} />
 
 With an initial assessment of the information architecture and structure, the Titan results cards appear cluttered. 
 
-![search results structure](/img/search-architecture.png)
+<Image src="/img/search-architecture.png" alt="search results structure" width={920} height={350} />
 
 Currently, the search result ‘cards’ with tour information take up a lot of space and do not utilise it very well. I thought this space could be utilised better, eliminating any wasted white space and having a larger CTA. I also suggest that we have a sticky header to display filter and sort options to the user. The dropdowns can be less imposing style-wise, such as the date selection/calendar and look more streamlined so as to display well on all devices.
 
@@ -71,28 +74,29 @@ A card sorting excercise was sent to a group of customers in order to understand
 
 User testing and competitor analysis inspired initial ideas. I suggested that the search bar is displayed prominently over the hero image as it a. saves above the fold space and b. is more prominent on the page for the visitor. This functionality would not work very well on mobile devices so, instead of being in the hero, users can click on a ‘search’ button to open the search dropdown.
 
-![concept for asearch bar on desktop and mobile](/img/search-concept.png)
+<Image src="/img/search-concept.png" alt="concept for asearch bar on desktop and mobile" width={920} height={350} />
 
 **Initial ideas for search results**
 
 I suggested that we have a sticky header to display filter and sort options to the user. Filters drop to the bottom of the page on mobile devices and they are only given the ‘edit search’ option at the top of the page. The dropdowns can be less imposing style-wise, such as the date selection/calendar and look more streamlined so as to display well on all devices.
 
-![design concept for a sticky search filters](/img/search-results-concept.png)
+<Image src="/img/search-results-concept.png" alt="design concept for a sticky search filters" width={920} height={350} />
 
 ## Going forward
 As part of a website rebuild, the search and search results were eventually redesigned and developed.
 
-![redesigned search results page vs old](/img/search-final.png)
+<Image src="/img/search-final.png" alt="redesigned search results page vs old" width={920} height={350} />
 
 With an agency, we began a discovery phase with the work and insights I had already gained to explore concepts further.
 
 Prior to this time, I created a working prototype of a site redesign that incorporated ideas for search. This was part of a “big vision” prototype concept that helped as a reference but also to get stakeholders and teams on board and excited.
 
-![Figma prototyping and flows](/img/search-big-vision-concept-1.png)
-![Figma interactive prototype](/img/search-big-vision-concept-2.png)
+<Image src="/img/search-big-vision-concept-1.png" alt="Figma prototyping and flows" width={920} height={350} />
+
+<Image src="/img/search-big-vision-concept-2.png" alt="Figma interactive prototype" width={920} height={350} />
 
 An idea was conceived in collaboration with the project team and UX Designer from an agency. It would help ‘inspire’ visitors that are unsure about a new destination and allow them to take part in a ‘search wizard’ or guided search so that they could define their trip better. This was put aside as a future project but during user testing, we found this to be a popular concept.
 
-![travel trip search wizard](/img/wizard-concept.png)
+<Image src="/img/wizard-concept.png" alt="travel trip search wizard" width={920} height={350} />
 
 An agency UX Designer, UI Designer and I collaborated on iterations and user testing to finalise the search engine flow that, once completed, was handed off to our in-house JavaScript Developers. During this time accessibility enhancements and bug fixes were made to the search bar to provide a faster more responsive system.

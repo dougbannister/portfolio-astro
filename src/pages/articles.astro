@@ -25,7 +25,7 @@ const getPageArticles = (page) => {
   <section>
     {
       Array.from({ length: totalPages }).map((_, pageIndex) => (
-      <ul role="list" class="cards">
+      <div class="cards">
           {
             getPageArticles(pageIndex + 1).map((article) => (
               <Card
@@ -36,7 +36,7 @@ const getPageArticles = (page) => {
               />
             ))
           }
-        </ul>
+        </div>
       ))
     }
   </section>

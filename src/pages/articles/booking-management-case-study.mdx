@@ -7,6 +7,8 @@ heroImage: '/img/mytitan-header.png'
 featured: True
 ---
 
+import { Image } from 'astro:assets';
+
 A holiday booking reservation system for travellers looking to manage their trip.
 
 ## Challenge
@@ -30,11 +32,7 @@ The team consisted of project managers from within the business as well as in th
 
 My initial responsibilities involved analysis of visitors’ use of the current system through direct feedback, statistics, web sessions and call recordings. Later, I went on to speak to past and present customers (and visitors who opted in to help) while developing interactive prototypes in Figma so that more unbiased and useful facts would be gained in remote usability testing. The prototypes incorporated already established UI styling.
 
-Google Analytics
-Data Analysis
-Figma Prototyping
-User testing
-Empathy mapping
+__Systems used__: Google Analytics, Data Analysis, Figma Prototyping, User testing, Empathy mapping
 
 ## User research
 The accumulation of feedback from customers and the sales team as well as routine user sessions were gathered and helped to structure and prioritise further areas of research. In conjunction with this, session recording with Hotjar provided further evidence and insight into quick wins as well as the underlying issues that needed to be designed.
@@ -42,7 +40,7 @@ The accumulation of feedback from customers and the sales team as well as routin
 ## Competitor analysis
 A number of competitor apps were examined, including Virgin, TUI, and Thomas Cook. This gives a picture of emerging trends and tech being used.
 
-![examples of competitor travel companies](/img/my-titan-competitors-1.png)
+<Image src="/img/my-titan-competitors-1.png" alt="examples of competitor travel companies" width={920} height={350} />
 
 **Virgin Holidays app**
 
@@ -56,14 +54,14 @@ The immediate insight is that the apps don’t use the superfluous information t
 
 Like Tui, Thomas Cook also makes use of a checklist feature. It gives the reassurance that nothing has been forgotten or removes the misconception that the company will be responsible for something (such as third party flight check-in).
 
-![some competitor travel companies](/img/my-titan-competitors-2.png)
+<Image src="/img/my-titan-competitors-2.png" alt="some competitor travel companies" width={920} height={350} />
 
 ## Approach
 **Addressing existing issues**
 
 From my audit and because we saw repeat issues from customer feedback and session recordings, an array of customer roadblocks was easily prioritised.
 
-![a list of customer pain points](/img/my-titan-priorities.png)
+<Image src="/img/my-titan-priorities.png" alt="a list of customer pain points" width={920} height={350} />
 
 The fundamental issue was that when a visitor makes a booking, we take their details at the point of sale but are notified by email that they can sign up to the booking management separately. This causes issues, especially if the booking was made through a sales call because there may be errors in the personal information they provided. This leads them to sign up with different details and so the two sets of information do not sync in order to show their booking.
 
@@ -73,7 +71,7 @@ Other problem areas existed in titles looking like buttons, the poor responsive 
 
 Documentation was an issue. PDFs used a bad in-house naming convention. The layout could be clearer to show items chronologically and there is an opportunity to allow for the documents to be read online as well as downloaded. Must have all customer documents available online as HTML and with the ability to download.
 
-![example of issues observed in ux audit](/img/my-titan-problem-areas.png)
+<Image src="/img/my-titan-problem-areas.png" alt="example of issues observed in ux audit" width={920} height={350} />
 
 As part of a website rebuild, the booking management system was eventually redesigned and developed into an account so that it can eventually be used site-wide.
 
@@ -81,29 +79,32 @@ With an agency, we began a discovery phase with the work and insights I had alre
 
 The team took part in workshops during a discovery phase of the rebuild project, such as 'I like, I wish, I wonder', 'stakeholder mapping' (priority matrix), 'Crazy 8s' and empathy mapping using 'thinking, seeing, hearing, doing'.
 
-![empathy mapping think, see, hear, say workshop](/img/my-titan-empathy.png)
+<Image src="/img/my-titan-empathy.png" alt="empathy mapping think, see, hear, say workshop" width={920} height={350} />
 
 I worked with an agency UX designer for the initial ideas of the booking management account.
 
-![initial design ideas for the account](/img/my-titan-archives.png)
+<Image src="/img/my-titan-archives.png" alt="initial design ideas for the account" width={920} height={350} />
 
 There were struggles with initial ideas and it became evident that a user-friendly navigation was essential to the account when following designs from a mobile layout into a desktop layout. As a solo designer during this step, I tried various solutions to meet an outcome that was expected to be most logical for users.
 
-![initial ideas for navigation](/img/my-titan-ideas-for-nav.png)
-![design ideas for the new system](/img/my-titan-ideas-for-nav-2.png)
+<Image src="/img/my-titan-ideas-for-nav.png" alt="initial ideas for navigation" width={920} height={350} />
+
+<Image src="/img/my-titan-ideas-for-nav-2.png" alt="design ideas for the new system" width={920} height={350} />
 
 I created a prototype in Figma of a working system with the use of stylised components and branding that were produced by a UI Designer from the agency. This allowed me to run user testing and iterate on designs, this was especially helpful for the documents section of the account because it identified some confusion from the participants.
 
-![example of design progress with the documents section of the account](/img/my-titan-documentation.png)
+<Image src="/img/my-titan-documentation.png" alt="example of design progress with the documents section of the account" width={920} height={350} />
 
 I organised and ran user testing and interview sessions remotely. Those that I invited and interviewed consisted of new and existing customers, most of whom aligned to preexisting user profiles.
 
-![Figma prototype file complexity](/img/my-titan-prototype-wires.png)
+<Image src="/img/my-titan-prototype-wires.png" alt="Figma prototype file complexity" width={920} height={350} />
 
 Part of using a human-centred design process is to present wireframes or prototypes and receive feedback or insights which help to inform later iterations. Because trade agents were also able to use the system to manage their customer trips, it was important to interview and find out more about how this user group would access and navigate an account based on their motivations.
 
-![final design concept showing the dashboard](/img/my-titan-final-1.png)
-![signed off design for the account's itinerary section](/img/my-titan-final-2.png)
+
+<Image src="/img/my-titan-final-1.png" alt="final design concept showing the dashboard" width={920} height={350} />
+
+<Image src="/img/my-titan-final-2.png" alt="signed off design for the account's itinerary section" width={920} height={350} />
 
 ## Going forward
 Moving forward, the management of reviews presents an intriguing opportunity facilitated through a site-wide login. Users often visit forums in search of advice and additional information. Establishing a dedicated forum for Q&A and feedback could empower customers to find solutions independently, thereby reducing resource demands at Titan. By actively monitoring the forum, we can gain valuable insights into customer issues and concerns, ultimately enhancing our products and services.

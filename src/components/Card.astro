@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from 'astro:assets'
 
 export interface Props {
   title: string;
@@ -8,7 +8,7 @@ export interface Props {
   intro: string;
 }
 
-const { title, href, img, intro } = Astro.props;
+const { title, href, img, intro } = Astro.props
 ---
 
 <div class="card">
@@ -32,10 +32,5 @@ const { title, href, img, intro } = Astro.props;
 
   .card:hover h3 {
     color: #e97cff;
-  }
-
-  .image {
-    border-radius: 1rem;
-    /* You can adjust other styles here if needed */
   }
 </style>

@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 import BaseLayout from "../layouts/BaseLayout.astro"
 
 export interface Props {
@@ -23,7 +25,7 @@ const {
     {
       heroImage && (
         <div class="hero">
-          <img src={heroImage} alt={title} />
+          <Image src={heroImage} alt={title} width={920} height={350}  />
         </div>
       )
     }
@@ -48,10 +50,5 @@ const {
 <style>
   .hero {
     margin-top: 20px;
-  }
-
-  .hero img {
-    max-width: 100%;
-    height: auto;
   }
 </style>
