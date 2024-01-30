@@ -14,7 +14,7 @@ const featuredArticle = allArticles.find(article => article.frontmatter.featured
 const regularArticles = allArticles.filter(article => !article.frontmatter.featured).slice(0, 4)
 ---
 
-<BaseLayout title="Portfolio" description="Doug Bannister's articles, case studies and other information">
+<BaseLayout title="Senior UX Designer" description="A design specialist with over a decade of experience creating and optimising digital user experiences for strategic business growth.">
   <section>
     <h1>I design and optimise digital experiences.</h1>
 
@@ -51,5 +51,6 @@ const regularArticles = allArticles.filter(article => !article.frontmatter.featu
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.2rem;
     padding: 0;
+    margin: 0 0 1rem;
   }
 </style>
