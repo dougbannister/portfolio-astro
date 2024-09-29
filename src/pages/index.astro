@@ -1,56 +1,54 @@
 ---
-import Card from "../components/Card.astro"
+import Article from "../components/Article.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
 
 // Fetch all articles and sort them by pubDate
-const allArticles = (await Astro.glob("./articles/*.{md,mdx}")).sort(
+const allArticles = (await Astro.glob("./blog/*.{md,mdx}")).sort(
   (a, b) =>
     new Date(b.frontmatter.pubDate).valueOf() -
     new Date(a.frontmatter.pubDate).valueOf()
 )
 
-// Separate featured and regular articles
-const featuredArticle = allArticles.find(article => article.frontmatter.featured)
-const regularArticles = allArticles.filter(article => !article.frontmatter.featured).slice(0, 4)
+// Featured articles
+const featuredArticles = allArticles.filter(article => article.frontmatter.featured).slice(0, 4)
 ---
 
 <BaseLayout title="Senior UX Designer" description="A design specialist with over a decade of experience creating and optimising digital user experiences for strategic business growth.">
   <section>
-    <h1>I design and optimise digital experiences.</h1>
+    <div class="proposition">
+        <img width="160px" height="160px" src="/img/profilePic.jpg" alt="My profile picture">
+      <div class="intro">
+        <h1>Doug Bannister</h1>
+        <p>As a Senior UX Designer with over a decade of experience, I specialise in creating intuitive, user-centric digital products that solve real problems and enhance the customer experience. From conducting in-depth user research to developing high-fidelity prototypes, my goal is to design seamless, accessible, and delightful solutions that align with business objectives.</p>
+        <p>Explore my <a href="/portfolio" title="Portfolio">portfolio</a> to see case studies of past projects or dive into my <a href="/blog" title="Blog">blog</a> for insights on UX, design thinking, and the latest industry trends.</p>
+      </div>
+    </div>
+    <h2>Recently published</h2>
 
-    <h2>Featured article</h2>
-    {featuredArticle && (
-      <Card
-        title={featuredArticle.frontmatter.title}
-        href={featuredArticle.url}
-        img={featuredArticle.frontmatter.heroImage}
-        intro={featuredArticle.frontmatter.description}
-      />
-    )}
-
-    <h2>Recent articles</h2>
-    <div class="cards">
       {
-        regularArticles.map((article) => (
-          <Card
-            title={article.frontmatter.title}
-            href={article.url}
-            img={article.frontmatter.heroImage}
-            intro={article.frontmatter.description}
-          />
+        featuredArticles.map((article) => (
+        <Article
+        title={article.frontmatter.title}
+        href={article.url}
+        intro={article.frontmatter.description}
+      />
         ))
       }
-    </div>
-    <a href="/articles">View all articles</a>
+
+    <a href="/blog">See all blog articles</a>
+    <!-- <h2>Kudos</h2> -->
   </section>
 </BaseLayout>
 
 <style>
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.2rem;
-    padding: 0;
-    margin: 0 0 1rem;
+  .proposition {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  img {
+    margin: 0;
   }
 </style>

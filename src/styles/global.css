@@ -13,11 +13,11 @@
 }
 
 @media (min-width: 64rem) {
-  * {font-size: 20px;}
+  * {font-size: 24px;}
 }
 
 html {
-  background-color: #0b0220;
+  background-color: #19121d;
   height: 100%;
 }
 
@@ -43,7 +43,7 @@ img {
   margin: 0 auto 16px auto;
 }
 
-nav a, a {
+a {
   font-weight: 700;
   color: #e97cff;
 }
@@ -80,7 +80,7 @@ ul,ol {
 a {
   cursor: pointer;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 a:visited {

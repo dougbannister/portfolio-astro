@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
-import Card from "../components/Card.astro"
+import Article from "../components/Article.astro"
 
 // Fetch all articles and sort them by pubDate
-const allArticles = (await Astro.glob("./articles/*.{md,mdx}")).sort(
+const allArticles = (await Astro.glob("./blog/*.{md,mdx}")).sort(
   (a, b) =>
     new Date(b.frontmatter.pubDate).valueOf() -
     new Date(a.frontmatter.pubDate).valueOf()
@@ -20,18 +20,17 @@ const getPageArticles = (page) => {
 ---
 
 <BaseLayout title="Articles" description="View and read all articles">
-  <h1>Articles</h1>
+  <h1>Blog articles</h1>
   <!-- Loop through paginated articles and generate cards -->
   <section>
     {
       Array.from({ length: totalPages }).map((_, pageIndex) => (
-      <div class="cards">
+      <div>
           {
             getPageArticles(pageIndex + 1).map((article) => (
-              <Card
+              <Article
                 title={article.frontmatter.title}
                 href={article.url}
-                img={article.frontmatter.heroImage}
                 intro={article.frontmatter.description}
               />
             ))
@@ -41,12 +40,3 @@ const getPageArticles = (page) => {
     }
   </section>
 </BaseLayout>
-
-<style>
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.2rem;
-    padding: 0;
-  }
-</style>

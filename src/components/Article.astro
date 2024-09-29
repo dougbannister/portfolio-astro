@@ -1,0 +1,39 @@
+---
+export interface Props {
+  title: string;
+  href: string;
+  intro: string;
+}
+
+const { title, href, intro } = Astro.props
+---
+
+<div class="article">
+  <a href={href}>
+    <h3>{title}</h3>
+    <p>{intro}</p>
+  </a>
+</div>
+
+<style>
+  .article {
+    display: flex;
+    width: 100%;
+    border-left: 2px solid white;
+    padding: 0 0 0 1rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .article:hover {
+    background-color: #201725;
+  }
+
+  .article > a {
+    text-decoration: none;
+    line-height: 1.4;
+  }
+
+  .article:hover h3 {
+    color: #e97cff;
+  }
+</style>
