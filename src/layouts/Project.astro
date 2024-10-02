@@ -7,13 +7,12 @@ export interface Props {
   content: {
     title: string;
     description: string;
-    pubDate?: string;
     heroImage?: string;
   };
 }
 
 const {
-  content: { title, description, pubDate, heroImage },
+  content: { title, description, heroImage },
 } = Astro.props
 ---
 
@@ -30,10 +29,6 @@ const {
     }
     
     <h1 class="title">{title}</h1>
-    
-    <p>
-    {pubDate && <time>{pubDate}</time>}
-    </p>
 
     <slot />
   </section>
