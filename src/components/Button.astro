@@ -1,0 +1,29 @@
+---
+export interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a href={href}><slot /></a>
+
+<style>
+  a {
+    width: 100%;
+    display: inline-block;
+    background-color: #e66bff;
+    padding: 8px 24px;
+    margin: 0 0 1rem;
+    color: #19121d;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 999px;
+  }
+  @media screen and (min-width: 667px) {
+    a {
+      width: auto;
+    }
+  }
+</style>
