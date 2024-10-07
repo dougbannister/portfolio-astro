@@ -1,0 +1,108 @@
+---
+layout: '../../layouts/Project.astro'
+title: 'Website wishlist'
+description: 'Exploring a wishlist feature for customers that allows them to create, manage and compare a list of trips.'
+pubDate: 'Sept 13 2023'
+heroImage: '/img/wishlist/hero.png'
+---
+
+import { Image } from 'astro:assets';
+
+## Challenge
+While working at a travel company as a UX designer, I was given the task of exploring a wishlist feature for customers. The idea was to allow users to create and manage a list of trips they were interested in, helping them evaluate and compare the options. The wishlist would also provide insights into customer interests, which could lead to targeted promotions and reminders to book trips they had saved.
+
+With over 300 trips to choose from, the challenge was to make it easy for customers to save, organise, and share their favourite trips, while also providing the business with valuable data for marketing purposes.
+
+__My role:__ As the sole designer, I owned the entire design process, from research to prototyping, and reported directly to several product managers.
+
+# Summary
+
+This project became one of my favourites as it combined customer insight with creative problem-solving. The company had experimented with a wishlist feature in the past, but it was mostly anecdotal that it was well-received. Some stakeholders also pointed out that our competitors had this functionality, so there was a strong belief it could help boost engagement and attract more potential customers.
+
+## Discovery
+### Knowledge board
+
+I started by setting up a knowledge board to collect all insights from user interviews, competitor analysis, and research. This helped me track key findings and align stakeholders on the project's goals.
+
+<Image src="/img/wishlist/knowledge-board.png" alt="a view of a knowledge board for UX" width={920} height={575} />
+
+### Competitor analysis and testing
+
+I looked at several direct competitors to see how they were using wishlist functionality and to understand how we could gain a competitive edge. Interestingly, half of the competitor brands didn’t have a wishlist feature, and those that did often required a login to save trips.
+
+For example, Intrepid and Explore allowed users to create a temporary wishlist without an account, but they encouraged signing up to save it permanently. This gave us an idea: we could stand out by offering optional sign-up (something that was confirmed as a preference by customers) and features like the ability to annotate trips, alongside better communication about how to use the wishlist.
+
+Beyond competitors, I also drew inspiration from non-travel sites like John Lewis, BBC iPlayer, Etsy, Amazon Shopping, and Apple Notes—sites our users were already familiar with.
+
+### User interviews
+
+I conducted in-depth conversations with six loyal customers to understand their trip planning habits and how they might use a wishlist feature. Most of these users were retirees, which offered interesting insights, as their needs can be quite different from first-time visitors or younger customers.
+
+<Image src="/img/wishlist/user-interview.png" alt="key feedback from user interviews" width={920} height={575} />
+
+The interviews were guided by flexible, open-ended questions to allow for natural conversations. This approach helped me gather detailed feedback.
+
+Here are a few key questions I asked:
+
+1. How do you usually decide on upcoming trips?
+2. Do you keep a written list of potential trips? How do you manage that list?
+3. Would you use a wishlist feature on our site, and how would you want it to work?
+4. How would you feel about registering to save your list vs. using it anonymously?
+
+Some key takeaways were:
+
++ Customers liked the idea of creating multiple lists, though there were concerns about having too many choices.
++ Most were familiar with using their phones or apps to organise trips.
++ While not overly concerned about signing up, some were cautious about registering on unfamiliar websites.
+
+### User surveys
+
+I also ran a survey on our website and received 300 responses. Half of the respondents said they would use a wishlist feature, which gave us confidence in the idea.
+
+The survey highlighted some concerns:
+
+1. Intrusiveness: Users didn’t want a wishlist feature constantly interrupting their experience.
+2. Unavailability: They would be frustrated if they couldn’t book trips from their wishlist or if notifications were lacking.
+3. Complexity: The feature shouldn’t overwhelm users with too many reminders or a cluttered interface.
+
+## Define
+### Personas
+
+From the interview and survey data, I created two key personas: a 'returning customer' and a 'new visitor'. These personas helped guide the design and prioritisation of features.
+
+<Image src="/img/wishlist/wishlist-personas.png" alt="two personas used for reference, advocation and empathy" width={920} height={575} />
+
+### 'How might we...'
+
+Using the insights I gathered, I created "how might we" statements to address specific user needs, making points more actionable. For example, "How might we enable visitors to easily share their wishlist with friends and family?" These questions helped spark ideas for potential features, such as trip annotations, list management, and sharing.
+
+<Image src="/img/wishlist/how-might-we.png" alt="how might we: reframing into actionable questions" width={920} height={575} />
+
+### User stories, objectives, and requirements
+
+With the "how might we" items in mind, I developed user stories that were organised into MVP (minimum viable product) features. This allowed us to focus on the core functionality first. I then worked closely with the team to add these user stories to Jira, listing out acceptance criteria to ensure each feature met our goals.
+
+## Design ideation
+
+I started the design process by mapping out user flows for key actions like "add to wishlist" and "manage wishlist". Using Figma, I created mobile-first layouts, designing components along the way. I followed familiar design patterns, such as using a heart icon on trip cards for quick saving.
+
+<Image src="/img/wishlist/flow.png" alt="picturing the journey as a flow diagram" width={920} height={575} />
+
+### Prototyping and user testing
+
+I developed a high-fidelity prototypes in Figma for both registered and unregistered flows, including full wishlist functionality. We conducted three rounds of testing through UserTesting.com, and the feedback was overwhelmingly positive.
+
+<Image src="/img/wishlist/wishlist-prototype.png" alt="picturing the journey as a flow diagram" width={920} height={575} />
+
+However, after reviewing the feedback, the team decided to launch a simplified version of the wishlist for the initial release. This version focused on the core ability to save and share trips, but without the feature to create multiple lists. Users could generate a shareable link, allowing friends or family to view the trips without needing to edit or delete them.
+
+### Final thoughts
+
+Just 2.5 weeks after launching the wishlist feature, we saw fantastic engagement:
+
++ On the UK site, 22.5k users wishlisted 53,417 trips - 15% of total users.
++ On the US site, 10k users wishlisted 4,414 trips - 3% of total users.
+
+Interestingly, very few users removed trips from their wishlists, suggesting that once something was added, it stayed there. On the UK site, only 606 users removed 2,025 trips, while on the US site, just 142 users removed 410 trips.
+
+Looking ahead, I proposed ideas to re-engage users beyond standard email reminders. One suggestion was personalisation—displaying a key trip from their wishlist in the homepage hero section when they returned to the site. Another idea was a subtle, slide-in message prompting users to revisit the trips they had saved.
