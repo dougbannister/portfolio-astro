@@ -21,6 +21,7 @@ const getPagePortfolio = (page) => {
 
 <BaseLayout title="Portfolio" description="View and read all case studies">
   <h1>Portfolio</h1>
+  <h2>Current case studies</h2>
   <!-- Loop through paginated portfolio and generate cards -->
   <section>
     {
@@ -32,7 +33,7 @@ const getPagePortfolio = (page) => {
                 title={portfolio.frontmatter.title}
                 href={portfolio.url}
                 img={portfolio.frontmatter.heroImage}
-                intro={portfolio.frontmatter.description}
+                description={portfolio.frontmatter.description}
               />
             ))
           }
@@ -45,7 +46,7 @@ const getPagePortfolio = (page) => {
 <style>
   .cards {
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.2rem;
     padding: 0;
   }

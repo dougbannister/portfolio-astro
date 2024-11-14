@@ -5,17 +5,16 @@ export interface Props {
   title: string;
   href: string;
   img: string;
-  intro: string;
+  description: string;
 }
 
-const { title, href, img, intro } = Astro.props
+const { title, href, img, description } = Astro.props
 ---
 
 <div class="card">
   <a href={href}>
-    <Image src={img} alt={title} width={920} height={350}  />
+    <Image src={img} alt={description} width={920} height={350}  />
     <h3>{title}</h3>
-    <p>{intro}</p>
   </a>
 </div>
 
