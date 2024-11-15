@@ -19,23 +19,34 @@ const {
 <BaseLayout title={title} description={description}>
   <section>
 
-    {/* Hero Image */}
-    {
+    <!-- Hero Image conditionally rendered -->
+   {
       heroImage && (
         <div class="hero">
-          <Image src={heroImage} alt={title} width={920} height={350}  />
+          <Image src={heroImage} alt={title} width={920} height={350} />
         </div>
       )
     }
-    
+  
     <h1 class="title">{title}</h1>
 
     <slot />
+
   </section>
 </BaseLayout>
 
 <style>
   .hero {
     margin-top: 20px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(468px, 1fr));
+    gap: 0;
+    padding: 0;
+  }
+  .left, .right {
+    display: flex;
+    width: 100%;
   }
 </style>
